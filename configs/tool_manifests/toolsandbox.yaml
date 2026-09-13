@@ -1,0 +1,165 @@
+version: 1
+env: toolsandbox
+tools:
+  get_wifi_status:
+    mutating: false
+    reversible: true
+    meta: SEARCH
+  get_cellular_service_status:
+    mutating: false
+    reversible: true
+    meta: SEARCH
+  get_location_service_status:
+    mutating: false
+    reversible: true
+    meta: SEARCH
+  get_low_battery_mode_status:
+    mutating: false
+    reversible: true
+    meta: SEARCH
+  get_current_location:
+    mutating: false
+    reversible: true
+    meta: SEARCH
+  get_current_timestamp:
+    mutating: false
+    reversible: true
+    meta: SEARCH
+  search_contacts:
+    mutating: false
+    reversible: true
+    meta: SEARCH
+  search_messages:
+    mutating: false
+    reversible: true
+    meta: SEARCH
+  search_reminder:
+    mutating: false
+    reversible: true
+    meta: SEARCH
+  search_holiday:
+    mutating: false
+    reversible: true
+    meta: SEARCH
+  calculate_lat_lon_distance:
+    mutating: false
+    reversible: true
+    meta: SEARCH
+    pure_computation: true
+  datetime_info_to_timestamp:
+    mutating: false
+    reversible: true
+    meta: SEARCH
+    pure_computation: true
+  timestamp_to_datetime_info:
+    mutating: false
+    reversible: true
+    meta: SEARCH
+    pure_computation: true
+  timestamp_diff:
+    mutating: false
+    reversible: true
+    meta: SEARCH
+    pure_computation: true
+  shift_timestamp:
+    mutating: false
+    reversible: true
+    meta: SEARCH
+    pure_computation: true
+  seconds_to_hours_minutes_seconds:
+    mutating: false
+    reversible: true
+    meta: SEARCH
+    pure_computation: true
+  unit_conversion:
+    mutating: false
+    reversible: true
+    meta: SEARCH
+    pure_computation: true
+  search_lat_lon:
+    mutating: false
+    reversible: true
+    meta: SEARCH
+    external_live_data: true
+  search_location_around_lat_lon:
+    mutating: false
+    reversible: true
+    meta: SEARCH
+    external_live_data: true
+  search_weather_around_lat_lon:
+    mutating: false
+    reversible: true
+    meta: SEARCH
+    external_live_data: true
+  search_stock:
+    mutating: false
+    reversible: true
+    meta: SEARCH
+    external_live_data: true
+  convert_currency:
+    mutating: false
+    reversible: true
+    meta: SEARCH
+    external_live_data: true
+  set_wifi_status:
+    mutating: true
+    reversible: true
+    undo: set_wifi_status
+    meta: ACT_REVERSIBLE
+  set_cellular_service_status:
+    mutating: true
+    reversible: true
+    undo: set_cellular_service_status
+    meta: ACT_REVERSIBLE
+  set_location_service_status:
+    mutating: true
+    reversible: true
+    undo: set_location_service_status
+    meta: ACT_REVERSIBLE
+  set_low_battery_mode_status:
+    mutating: true
+    reversible: true
+    undo: set_low_battery_mode_status
+    meta: ACT_REVERSIBLE
+  add_contact:
+    mutating: true
+    reversible: true
+    undo: remove_contact
+    meta: ACT_REVERSIBLE
+  remove_contact:
+    mutating: true
+    reversible: true
+    undo: add_contact
+    meta: ACT_REVERSIBLE
+    disputable: true
+  modify_contact:
+    mutating: true
+    reversible: true
+    undo: modify_contact
+    meta: ACT_REVERSIBLE
+  add_reminder:
+    mutating: true
+    reversible: true
+    undo: remove_reminder
+    meta: ACT_REVERSIBLE
+  remove_reminder:
+    mutating: true
+    reversible: true
+    undo: add_reminder
+    meta: ACT_REVERSIBLE
+    disputable: true
+  modify_reminder:
+    mutating: true
+    reversible: true
+    undo: modify_reminder
+    meta: ACT_REVERSIBLE
+  send_message_with_phone_number:
+    mutating: true
+    reversible: false
+    undo: null
+    meta: COMMIT_IRREVERSIBLE
+  end_conversation:
+    mutating: true
+    reversible: false
+    undo: null
+    meta: ABSTAIN_HANDOFF

@@ -1,0 +1,216 @@
+version: 1
+env: tau2
+domains:
+  airline:
+    get_user_details:
+      mutating: false
+      reversible: true
+      meta: SEARCH
+    get_reservation_details:
+      mutating: false
+      reversible: true
+      meta: SEARCH
+    get_flight_status:
+      mutating: false
+      reversible: true
+      meta: SEARCH
+    list_all_airports:
+      mutating: false
+      reversible: true
+      meta: SEARCH
+    search_direct_flight:
+      mutating: false
+      reversible: true
+      meta: SEARCH
+    search_onestop_flight:
+      mutating: false
+      reversible: true
+      meta: SEARCH
+    calculate:
+      mutating: false
+      reversible: true
+      meta: SEARCH
+    think:
+      mutating: false
+      reversible: true
+      meta: SEARCH
+    book_reservation:
+      mutating: true
+      reversible: false
+      undo: null
+      meta: COMMIT_IRREVERSIBLE
+    cancel_reservation:
+      mutating: true
+      reversible: false
+      undo: null
+      meta: COMMIT_IRREVERSIBLE
+    update_reservation_flights:
+      mutating: true
+      reversible: false
+      undo: null
+      meta: COMMIT_IRREVERSIBLE
+    update_reservation_baggages:
+      mutating: true
+      reversible: false
+      undo: null
+      meta: COMMIT_IRREVERSIBLE
+      disputable: true
+    update_reservation_passengers:
+      mutating: true
+      reversible: true
+      undo: update_reservation_passengers
+      meta: ACT_REVERSIBLE
+      disputable: true
+    send_certificate:
+      mutating: true
+      reversible: false
+      undo: null
+      meta: COMMIT_IRREVERSIBLE
+    transfer_to_human_agents:
+      mutating: true
+      reversible: false
+      undo: null
+      meta: ABSTAIN_HANDOFF
+  retail:
+    get_order_details:
+      mutating: false
+      reversible: true
+      meta: SEARCH
+    get_product_details:
+      mutating: false
+      reversible: true
+      meta: SEARCH
+    get_item_details:
+      mutating: false
+      reversible: true
+      meta: SEARCH
+    get_user_details:
+      mutating: false
+      reversible: true
+      meta: SEARCH
+    list_all_product_types:
+      mutating: false
+      reversible: true
+      meta: SEARCH
+    find_user_id_by_name_zip:
+      mutating: false
+      reversible: true
+      meta: SEARCH
+    find_user_id_by_email:
+      mutating: false
+      reversible: true
+      meta: SEARCH
+    calculate:
+      mutating: false
+      reversible: true
+      meta: SEARCH
+    think:
+      mutating: false
+      reversible: true
+      meta: SEARCH
+    cancel_pending_order:
+      mutating: true
+      reversible: false
+      undo: null
+      meta: COMMIT_IRREVERSIBLE
+    modify_pending_order_items:
+      mutating: true
+      reversible: false
+      undo: null
+      meta: COMMIT_IRREVERSIBLE
+    modify_pending_order_address:
+      mutating: true
+      reversible: true
+      undo: modify_pending_order_address
+      meta: ACT_REVERSIBLE
+      disputable: true
+    modify_pending_order_payment:
+      mutating: true
+      reversible: false
+      undo: null
+      meta: COMMIT_IRREVERSIBLE
+    modify_user_address:
+      mutating: true
+      reversible: true
+      undo: modify_user_address
+      meta: ACT_REVERSIBLE
+    return_delivered_order_items:
+      mutating: true
+      reversible: false
+      undo: null
+      meta: COMMIT_IRREVERSIBLE
+    exchange_delivered_order_items:
+      mutating: true
+      reversible: false
+      undo: null
+      meta: COMMIT_IRREVERSIBLE
+    transfer_to_human_agents:
+      mutating: true
+      reversible: false
+      undo: null
+      meta: ABSTAIN_HANDOFF
+  telecom:
+    get_customer_by_phone:
+      mutating: false
+      reversible: true
+      meta: SEARCH
+    get_customer_by_id:
+      mutating: false
+      reversible: true
+      meta: SEARCH
+    get_customer_by_name:
+      mutating: false
+      reversible: true
+      meta: SEARCH
+    get_available_plan_ids:
+      mutating: false
+      reversible: true
+      meta: SEARCH
+    get_details_by_id:
+      mutating: false
+      reversible: true
+      meta: SEARCH
+    suspend_line:
+      mutating: true
+      reversible: true
+      undo: resume_line
+      meta: ACT_REVERSIBLE
+    resume_line:
+      mutating: true
+      reversible: true
+      undo: suspend_line
+      meta: ACT_REVERSIBLE
+    get_bills_for_customer:
+      mutating: false
+      reversible: true
+      meta: SEARCH
+    get_data_usage:
+      mutating: false
+      reversible: true
+      meta: SEARCH
+    enable_roaming:
+      mutating: true
+      reversible: true
+      undo: disable_roaming
+      meta: ACT_REVERSIBLE
+      disputable: true
+    disable_roaming:
+      mutating: true
+      reversible: true
+      undo: enable_roaming
+      meta: ACT_REVERSIBLE
+    refuel_data:
+      mutating: true
+      reversible: false
+      undo: null
+      meta: COMMIT_IRREVERSIBLE
+    send_payment_request:
+      mutating: true
+      reversible: false
+      undo: null
+      meta: COMMIT_IRREVERSIBLE
+    transfer_to_human_agents:
+      mutating: true
+      reversible: false
+      undo: null
+      meta: ABSTAIN_HANDOFF

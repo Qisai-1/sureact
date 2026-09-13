@@ -1,0 +1,38 @@
+profiles:
+  low:
+    r_success: 1.0
+    costs:
+      ASK: 0.02
+      SEARCH: 0.01
+      VERIFY: 0.01
+      ACT_REVERSIBLE: 0.01
+      COMMIT_IRREVERSIBLE: 0.01
+      ABSTAIN_HANDOFF: 0.0
+      ABSTAIN_REFUSE: 0.0
+
+  medium:
+    r_success: 1.0
+    costs:
+      ASK: 0.05
+      SEARCH: 0.02
+      VERIFY: 0.02
+      ACT_REVERSIBLE: 0.02
+      COMMIT_IRREVERSIBLE: 0.02
+      ABSTAIN_HANDOFF: 0.0
+      ABSTAIN_REFUSE: 0.0
+
+  high:
+    r_success: 1.0
+    costs:
+      ASK: 0.15
+      SEARCH: 0.04
+      VERIFY: 0.04
+      ACT_REVERSIBLE: 0.04
+      COMMIT_IRREVERSIBLE: 0.04
+      ABSTAIN_HANDOFF: 0.0
+      ABSTAIN_REFUSE: 0.0
+
+sweeps:
+  lambda: [0.0, 0.5, 1.0, 2.0, 4.0]
+  eta: [1.0, 5.0]
+  tau_risk: 0.1

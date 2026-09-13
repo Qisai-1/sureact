@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sureact"
+version = "0.1.0"
+description = "Counterfactual labelling and learned intervention selection for tool-using language agents"
+requires-python = ">=3.10"
+dependencies = ["pyyaml"]
+
+[project.optional-dependencies]
+train = ["torch", "transformers>=4.57", "peft>=0.20"]
+label = ["openai", "polars"]
+dev = ["pytest"]
+
+[tool.setuptools.packages.find]
+include = ["sureact*"]

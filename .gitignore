@@ -1,0 +1,45 @@
+__pycache__/
+*.egg-info/
+.pytest_cache/
+results/
+logs/
+third_party/
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+
+# Logs
+*.log
+
+# Checkpoints / models
+*.pt
+*.pth
+*.ckpt
+
+# Experiment outputs
+wandb/
+runs/
+logs/
+
+# Large datasets
+*.npz
+*.npy
+*.h5
+*.hdf5
